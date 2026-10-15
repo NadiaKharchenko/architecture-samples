@@ -20,6 +20,8 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
+      - name: Build Android project
+        run: ./gradlew assembleDebug
          
          
          
