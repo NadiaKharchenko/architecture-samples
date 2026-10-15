@@ -22,6 +22,8 @@ jobs:
           java-version: '17'
       - name: Build Android project
         run: ./gradlew assembleDebug
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest
          
          
          
