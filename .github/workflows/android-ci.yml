@@ -15,22 +15,24 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: '17'
+          cache: 'gradle'
+
       - name: Build Android project
         run: ./gradlew assembleDebug
+
       - name: Run unit tests
         run: ./gradlew testDebugUnitTest
+
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
-         
-         
-         
-        
-          
+
+
