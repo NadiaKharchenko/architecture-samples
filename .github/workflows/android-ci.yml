@@ -52,6 +52,8 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
-          arch: x86
+          target: default
+          arch: x86_64
           disable-animations: true
+          emulator-boot-timeout: 600
           script: ./gradlew :app:connectedCheck
